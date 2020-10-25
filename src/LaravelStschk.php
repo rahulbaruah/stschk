@@ -13,9 +13,9 @@ class LaravelStschk
     			
     			//The data you want to send via POST
     			$fields = [
-    			    'app'	=> env('APP_NAME',''),
-    			    'key'	=> env('KEY',''),
-    			    'hash'	=> UniqueMachineID(),
+    			    'app'	=> config('laravel-stschk.app_name'),
+    			    'key'	=> config('laravel-stschk.key'),
+    			    'hash'	=> $this->UniqueMachineID(),
     			];
     			
     			//url-ify the data for the POST
