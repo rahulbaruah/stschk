@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Rahxcr\LaravelStschk\Http\Middleware;
 
 use Closure;
 use Rahxcr\LaravelStschk\LaravelStschk;
