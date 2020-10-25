@@ -18,7 +18,7 @@ class CheckSystemStatus
     {
         if($request->is('login') || $request->is('*/login') || $request->is('login/*') || $request->is('register')) {
             if (!LaravelStschk::ChkLc()) {
-                abort(403, 'System Exception Occurred. Access denied');
+                abort(403, 'System Exception Occurred.');
             }
         }
         
