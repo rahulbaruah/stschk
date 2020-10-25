@@ -3,6 +3,8 @@
 namespace Rahxcr\LaravelStschk;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Http\Kernel;
+use Rahxcr\LaravelStschk\Http\Middleware\CheckSystemStatus;
 
 class LaravelStschkServiceProvider extends ServiceProvider
 {
@@ -18,6 +20,9 @@ class LaravelStschkServiceProvider extends ServiceProvider
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-stschk');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        
+        $kernel = $this->app->make(Kernel::class);
+        $kernel->pushMiddleware(CheckSystemStatus::class);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
