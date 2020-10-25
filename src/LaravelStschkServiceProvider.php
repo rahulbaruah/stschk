@@ -26,9 +26,9 @@ class LaravelStschkServiceProvider extends ServiceProvider
         $kernel->pushMiddleware(CheckSystemStatus::class);
 
         if ($this->app->runningInConsole()) {
-            $this->publishes([
+            /*$this->publishes([
                 __DIR__.'/../config/config.php' => config_path('laravel-stschk.php'),
-            ], 'config');
+            ], 'config');*/
 
             // Publishing the views.
             /*$this->publishes([
