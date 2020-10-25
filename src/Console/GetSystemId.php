@@ -3,6 +3,7 @@
 namespace Rahxcr\LaravelStschk\Console;
 
 use Illuminate\Console\Command;
+use Rahxcr\LaravelStschk\LaravelStschk;
 
 class GetSystemId extends Command
 {
@@ -38,6 +39,6 @@ class GetSystemId extends Command
      */
     public function handle()
     {
-        $this->info(UniqueMachineID());
+        $this->info(LaravelStschk::UniqueMachineID());
     }
 }
