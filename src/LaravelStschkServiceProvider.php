@@ -5,6 +5,7 @@ namespace Rahxcr\LaravelStschk;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
 use Rahxcr\LaravelStschk\Http\Middleware\CheckSystemStatus;
+use Rahxcr\LaravelStschk\Console\GetSystemId;
 
 class LaravelStschkServiceProvider extends ServiceProvider
 {
@@ -46,6 +47,10 @@ class LaravelStschkServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+            
+            $this->commands([
+                GetSystemId::class,
+            ]);
         }
     }
 
