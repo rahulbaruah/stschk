@@ -6,7 +6,7 @@ class LaravelStschk
 {
     // Build your next great package.
     
-    public function ChkLc() {
+    public static function ChkLc() {
     	try {
     			//The url you wish to send the POST request to
     			$url = 'https://license.xcraft.co/api/checklicense';
@@ -15,7 +15,7 @@ class LaravelStschk
     			$fields = [
     			    'app'	=> config('laravel-stschk.app_name'),
     			    'key'	=> config('laravel-stschk.key'),
-    			    'hash'	=> $this->UniqueMachineID(),
+    			    'hash'	=> static::UniqueMachineID(),
     			];
     			
     			//url-ify the data for the POST
@@ -46,7 +46,7 @@ class LaravelStschk
         }
     }
     
-    public function UniqueMachineID($salt = "") {
+    public static function UniqueMachineID($salt = "") {
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             $temp = sys_get_temp_dir().DIRECTORY_SEPARATOR."diskpartscript.txt";
             if(!file_exists($temp) && !is_file($temp)) file_put_contents($temp, "select disk 0\ndetail disk");
